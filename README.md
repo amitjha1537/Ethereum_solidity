@@ -36,10 +36,8 @@ Overall, the "MyToken" contract provides a versatile framework for token creatio
 * Once you are on the Remix website, create a new file by clicking on the "+" icon in the left-hand sidebar. Save the file with a .sol extension. Copy and paste the following code into the file:
 * 
 // SPDX-License-Identifier: MIT
-
 pragma solidity 0.8.18;
 contract MyToken {
-
     // Public variables to store the details about the coin
     string public tokName = "Tackle28";
     string public abbreviation = "TKL";
@@ -53,7 +51,6 @@ contract MyToken {
         totalSupply += Balance;
         balances[address12] += Balance;
     }
-
     // Burn function to destroy tokens
    function burn(address address12, uint256 Balance) public {
     if (balances[address12] >= Balance) {
