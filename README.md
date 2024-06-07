@@ -54,6 +54,7 @@ contract MyToken {
     }
 
     // Burn function to destroy tokens
+    
    function burn(address address12, uint256 Balance) public {
     if (balances[address12] >= Balance) {
         totalSupply -= Balance;
