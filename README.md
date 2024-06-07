@@ -36,35 +36,32 @@ Overall, the "MyToken" contract provides a versatile framework for token creatio
 * Once you are on the Remix website, create a new file by clicking on the "+" icon in the left-hand sidebar. Save the file with a .sol extension.
 *  Copy and paste the following code into the file:
   
- // SPDX-License-Identifier: MIT
- 
+// SPDX-License-Identifier: MIT
 pragma solidity 0.8.18;
+
 contract MyToken {
 
     // Public variables to store the details about the coin
-    string public tokName = "Tackle28";
-    string public abbreviation = "TKL";
+    string public Name = "ETH_Token";
+    string public Abbr = "ETK";
     uint256 public totalSupply;
 
     // Mapping of addresses to balances
     mapping(address => uint256) public balances;
 
     // Mint function to create new tokens
-    function mint(address address12, uint256 Balance) public {
-        totalSupply += Balance;
-        balances[address12] += Balance;
+    function mint(address add, uint256 amount) public {
+        totalSupply += amount;
+        balances[add] += amount;
     }
-    // Burn function to destroy tokens
-   function burn(address address12, uint256 Balance) public {
-    if (balances[address12] >= Balance) {
-        totalSupply -= Balance;
-        balances[address12] -= Balance;
-    } else {
-        revert("Not enough token to burn");
-    }
-   }
-}
 
+    // Burn function to destroy tokens
+    function burn(address add, uint256 amount) public {
+        require(balances[add] >= amount, "Insufficient balance to burn");
+        totalSupply -= amount;
+        balances[add] -= amount;
+    }
+}
 
 ### Executing program
 
