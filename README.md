@@ -34,7 +34,7 @@ Overall, the "MyToken" contract provides a versatile framework for token creatio
 
 * To run this program, you can use Remix, an online Solidity IDE. To get started, go to the Remix website at https://remix.ethereum.org/.
 * Once you are on the Remix website, create a new file by clicking on the "+" icon in the left-hand sidebar. Save the file with a .sol extension. Copy and paste the following code into the file:
-* // SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: MIT
 pragma solidity 0.8.18;
 
 contract MyToken {
@@ -54,13 +54,15 @@ contract MyToken {
     }
 
     // Burn function to destroy tokens
-    function burn(address address12, uint256 Balance) public {
-        require(balances[address12] >= Balance, "Not enough token to burn");
+   function burn(address address12, uint256 Balance) public {
+    if (balances[address12] >= Balance) {
         totalSupply -= Balance;
         balances[address12] -= Balance;
+    } else {
+        revert("Not enough token to burn");
     }
+   }
 }
-
 ### Executing program
 
 To compile the code, click on the "Solidity Compiler" tab in the left-hand sidebar. Make sure the "Compiler" option is set to "0.8.18" (or another compatible version), and then click on the "Assesment2.sol" button.
