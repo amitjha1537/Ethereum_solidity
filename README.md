@@ -37,8 +37,8 @@ Overall, the "MyToken" contract provides a versatile framework for token creatio
 *  Copy and paste the following code into the file:
   
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.18;
 
+pragma solidity 0.8.18;
 contract MyToken {
 
     // Public variables to store the details about the coin
@@ -65,6 +65,7 @@ contract MyToken {
     }
    }
 }
+
 
 ### Executing program
 
