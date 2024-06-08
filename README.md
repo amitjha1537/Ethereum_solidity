@@ -40,7 +40,6 @@ Overall, the "MyToken" contract provides a versatile framework for token creatio
 
 pragma solidity 0.8.18;
 contract MyToken {
-
     // Public variables to store the details about the coin
     string public tokName = "Tackle28";
     string public abbreviation = "TKL";
