@@ -63,7 +63,9 @@ contract MyToken {
         balances[address12] -= Balance;
     } else {
         revert("Not enough token to burn");
-    }}}
+    }
+    }
+  }
 
 ### Executing program
 
